@@ -1,0 +1,13 @@
+#!/bin/zsh
+#Author : Shripad Kale
+#Created Date : Tue Aug 30 09:20:45 IST 2022
+#Purpose : To create the tar.gz backups
+#Description : This script will be used to create backups in the form of '.tar.gz' file
+#Start your script from next line!
+print "Welcome to backup script!!";
+
+print "Please enter the source location[From source location files will be picked up for backup]:";
+read sourcedir;
+
+print "Backing up files in the $sourcedir to a tarball:";
+tar 

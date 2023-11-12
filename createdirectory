@@ -1,0 +1,34 @@
+#!/bin/zsh
+#Author : Shripad Kale
+#Created Date : Sun Aug 7 13:48:10 IST 2022
+#Purpose : To automate mkdir command
+#Description : When this script is executed it will create the directories
+#Start your script from next line!
+echo 'Welcome to the directory creator script!!!';
+echo 'What kind of name you wanted for the directory?';
+echo -e '1)Normal Name\n2)Name with timestamp';
+read choice;
+
+case $choice in
+	1)echo 'Enter the name for directory: ';
+	  read dirname;
+	  echo -e 'Enter directory path(Please enter absolute path only!):';
+	  read location;
+	  echo 'Creating your directory '$dirname;
+	  mkdir $location$dirname;
+	  ls -ltrh $location;
+	  ;;
+	2)echo 'Enter the name for directory: ';
+	  read dirname;
+	  echo -e 'Enter directory path\n(Please enter absolute path only!):';
+	  read location;
+	  echo 'Creating your directory '$dirname;
+          mkdir $location$dirname$(date +%d%m%y_%H%M%S);
+	  ls -lrth $location;
+          ;;
+	*)echo 'Exiting the script!!!';
+	  ;;
+esac;
+
+	
+

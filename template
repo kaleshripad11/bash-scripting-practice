@@ -1,0 +1,38 @@
+#!/bin/zsh
+#Title : Template Script
+#Author : Shripad Kale
+#Created date : 05 Aug 2022
+#Purpose : Create shell script templates, which directly can be edited
+
+#Ask the script file name 
+echo 'Enter the script file name :';
+read filename;
+
+#Ask the location, to save the file
+echo -e 'Enter the location to save this script :\n(Please provide absolute and complete path to the location)';
+read fileloc;
+
+#Ask author
+echo 'Enter author of this script :';
+read author;
+
+#Ask purpose of the script
+echo 'Enter purpose for writing this script :';
+read purpose;
+
+#Ask short description for the script
+echo 'Enter short description for the script :';
+read description
+
+echo 'Preparing your script template ';
+file=$fileloc$filename;
+touch $file;
+
+#Enter Author, Purpose, Short Description
+echo '#!/bin/zsh' >> $file; 
+echo '#Author : '$author >> $file;
+echo '#Created Date : '`date` >> $file;
+echo '#Purpose : '$purpose >> $file;
+echo '#Description : '$description >> $file;
+echo '#Start your script from next line!' >> $file;
+echo 'Congratulations!, Your script'$filename'template is ready!!!';
